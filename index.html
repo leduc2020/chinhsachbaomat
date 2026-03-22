@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chính Sách Bảo Mật | Hệ Sinh Thái DucYuz.Com</title>
+  <meta name="description" content="Chính sách bảo mật của Hệ Sinh Thái DucYuz.Com" />
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg2:#0d1b2f;
+      --card:rgba(255,255,255,0.08);
+      --card-border:rgba(255,255,255,0.14);
+      --text:#eaf2ff;
+      --muted:#a9bad6;
+      --primary:#4da3ff;
+      --primary2:#7b61ff;
+      --accent:#00d2ff;
+      --danger:#ff6b6b;
+      --shadow:0 20px 60px rgba(0,0,0,0.35);
+      --radius:24px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(77,163,255,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(123,97,255,0.16), transparent 28%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      min-height:100vh;
+      line-height:1.7;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1120px, calc(100% - 32px));
+      margin:auto;
+    }
+
+    .hero{
+      padding:80px 0 30px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 18px;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      border-radius:999px;
+      color:#dbe8ff;
+      font-size:14px;
+      margin-bottom:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size: clamp(32px, 6vw, 62px);
+      line-height:1.08;
+      margin-bottom:18px;
+      letter-spacing:-1px;
+    }
+
+    .gradient-text{
+      background: linear-gradient(90deg, #ffffff, #9fd0ff, #b8a3ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:17px;
+      max-width:760px;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-card h3{
+      font-size:20px;
+      margin-bottom:12px;
+    }
+
+    .hero-card p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:18px;
+      padding:18px 16px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:22px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .stat span{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .main{
+      padding:24px 0 70px;
+    }
+
+    .policy-wrap{
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .side{
+      position:sticky;
+      top:20px;
+    }
+
+    .side-card{
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter: blur(14px);
+      box-shadow:var(--shadow);
+    }
+
+    .side-card h3{
+      font-size:18px;
+      margin-bottom:14px;
+    }
+
+    .side-card ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .side-card a{
+      display:block;
+      padding:11px 14px;
+      border-radius:14px;
+      color:var(--muted);
+      transition:0.25s ease;
+      border:1px solid transparent;
+      background:rgba(255,255,255,0.03);
+    }
+
+    .side-card a:hover{
+      color:#fff;
+      border-color:rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.07);
+      transform:translateX(4px);
+    }
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .section{
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(16px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .section::before{
+      content:"";
+      position:absolute;
+      inset:auto -50px -50px auto;
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(77,163,255,0.18), transparent 70%);
+      pointer-events:none;
+    }
+
+    .section h2{
+      font-size:24px;
+      margin-bottom:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .section .number{
+      width:40px;
+      height:40px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--primary), var(--primary2));
+      color:#fff;
+      font-weight:bold;
+      font-size:16px;
+      box-shadow:0 10px 25px rgba(77,163,255,0.35);
+      flex-shrink:0;
+    }
+
+    .section p{
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .highlight{
+      margin-top:16px;
+      padding:18px 18px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      color:#dce8ff;
+    }
+
+    .warning{
+      margin-top:28px;
+      padding:22px;
+      background:linear-gradient(135deg, rgba(255,107,107,0.14), rgba(255,152,0,0.12));
+      border:1px solid rgba(255,255,255,0.1);
+      border-left:5px solid var(--danger);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .warning strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .footer{
+      padding:24px 0 50px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    .footer .brand{
+      color:#fff;
+      font-weight:bold;
+    }
+
+    .top-btn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:52px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow);
+      transition:0.25s ease;
+    }
+
+    .top-btn:hover{
+      transform:translateY(-4px);
+      background:rgba(255,255,255,0.14);
+    }
+
+    @media (max-width: 960px){
+      .hero-grid,
+      .policy-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .side{
+        position:static;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{
+        padding-top:56px;
+      }
+
+      .section,
+      .hero-card,
+      .side-card{
+        padding:20px;
+        border-radius:22px;
+      }
+
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      .section h2{
+        font-size:20px;
+      }
+
+      .section p{
+        font-size:15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero" id="top">
+    <div class="container">
+      <div class="badge">🔒 Chính thức áp dụng tại Hệ Sinh Thái DucYuz.Com</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>
+            <span class="gradient-text">Chính Sách Bảo Mật</span><br>
+            Hệ Sinh Thái DucYuz.Com
+          </h1>
+          <p>
+            Chúng tôi tôn trọng quyền riêng tư của người dùng và cam kết minh bạch trong việc
+            thu thập, sử dụng, bảo vệ dữ liệu cũng như giới hạn trách nhiệm đối với các nội dung,
+            mã nguồn, công cụ và dịch vụ được chia sẻ trong hệ sinh thái DucYuz.Com.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <h3>Thông tin chung</h3>
+          <p>
+            Chính sách này áp dụng cho website, dịch vụ, mã nguồn, tài liệu, công cụ số và các nền tảng
+            liên kết thuộc Hệ Sinh Thái DucYuz.Com.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Minh bạch nội dung</span>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <span>Bảo vệ trải nghiệm</span>
+            </div>
+            <div class="stat">
+              <strong>Bảo mật</strong>
+              <span>Thông tin người dùng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="policy-wrap">
+        <aside class="side">
+          <div class="side-card">
+            <h3>Mục lục</h3>
+            <ul>
+              <li><a href="#section1">1. Phạm vi áp dụng</a></li>
+              <li><a href="#section2">2. Thông tin thu thập</a></li>
+              <li><a href="#section3">3. Mục đích sử dụng</a></li>
+              <li><a href="#section4">4. Bảo mật dữ liệu</a></li>
+              <li><a href="#section5">5. Chia sẻ bên thứ ba</a></li>
+              <li><a href="#section6">6. Quyền của người dùng</a></li>
+              <li><a href="#section7">7. Miễn trừ trách nhiệm</a></li>
+              <li><a href="#section8">8. Cập nhật chính sách</a></li>
+              <li><a href="#section9">9. Liên hệ</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="content">
+          <div class="section" id="section1">
+            <h2><span class="number">1</span> Phạm vi áp dụng</h2>
+            <p>
+              Chính sách bảo mật này áp dụng cho toàn bộ hệ thống website, nền tảng, công cụ, mã nguồn,
+              tài liệu và các dịch vụ số thuộc Hệ Sinh Thái DucYuz.Com. Khi truy cập, tải xuống, đăng ký
+              hoặc sử dụng bất kỳ dịch vụ nào của chúng tôi, người dùng được xem là đã đọc, hiểu và đồng ý
+              với các nội dung trong chính sách này.
+            </p>
+          </div>
+
+          <div class="section" id="section2">
+            <h2><span class="number">2</span> Thông tin được thu thập</h2>
+            <p>
+              Chúng tôi có thể thu thập một số thông tin cơ bản của người dùng như họ tên, email, số điện thoại,
+              tài khoản liên hệ, địa chỉ IP, thông tin thiết bị, lịch sử truy cập hoặc dữ liệu cần thiết để hỗ trợ
+              sử dụng dịch vụ. Việc thu thập chỉ được thực hiện trong phạm vi cần thiết nhằm vận hành hệ thống,
+              nâng cao trải nghiệm và hỗ trợ khách hàng.
+            </p>
+            <div class="highlight">
+              Chúng tôi không khuyến khích người dùng gửi các thông tin nhạy cảm không cần thiết qua biểu mẫu,
+              tin nhắn hoặc nền tảng liên hệ.
+            </div>
+          </div>
+
+          <div class="section" id="section3">
+            <h2><span class="number">3</span> Mục đích sử dụng thông tin</h2>
+            <p>
+              Thông tin được thu thập có thể được sử dụng để xác minh tài khoản, hỗ trợ kỹ thuật, cải thiện chất lượng
+              dịch vụ, xử lý giao dịch, gửi thông báo cần thiết, chăm sóc khách hàng và bảo vệ hệ thống khỏi các hành vi
+              gian lận, truy cập trái phép hoặc sử dụng sai mục đích.
+            </p>
+          </div>
+
+          <div class="section" id="section4">
+            <h2><span class="number">4</span> Bảo mật dữ liệu</h2>
+            <p>
+              Hệ Sinh Thái DucYuz.Com áp dụng các biện pháp kỹ thuật và quản trị phù hợp để bảo vệ dữ liệu người dùng
+              khỏi mất mát, truy cập trái phép, rò rỉ, thay đổi hoặc phá hoại. Tuy nhiên, không có hệ thống nào an toàn
+              tuyệt đối trên môi trường internet, vì vậy chúng tôi không thể cam kết loại bỏ hoàn toàn mọi rủi ro bảo mật.
+            </p>
+          </div>
+
+          <div class="section" id="section5">
+            <h2><span class="number">5</span> Chia sẻ thông tin với bên thứ ba</h2>
+            <p>
+              Chúng tôi không bán hoặc trao đổi thông tin cá nhân của người dùng cho bên thứ ba vì mục đích thương mại
+              trái phép. Thông tin chỉ có thể được chia sẻ khi cần thiết để vận hành dịch vụ, tuân thủ yêu cầu pháp lý,
+              giải quyết tranh chấp hoặc bảo vệ quyền và lợi ích hợp pháp của Hệ Sinh Thái DucYuz.Com.
+            </p>
+          </div>
+
+          <div class="section" id="section6">
+            <h2><span class="number">6</span> Quyền của người dùng</h2>
+            <p>
+              Người dùng có quyền kiểm tra, chỉnh sửa hoặc yêu cầu xoá các thông tin cá nhân đã cung cấp trong phạm vi
+              cho phép của hệ thống và quy định pháp luật hiện hành. Người dùng cũng có trách nhiệm bảo mật tài khoản,
+              thiết bị, mật khẩu và các thông tin truy cập của chính mình.
+            </p>
+          </div>
+
+          <div class="section" id="section7">
+            <h2><span class="number">7</span> Miễn trừ trách nhiệm</h2>
+            <p>
+              Toàn bộ mã nguồn, tài liệu, công cụ hoặc nội dung được chia sẻ trong Hệ Sinh Thái DucYuz.Com chủ yếu nhằm
+              mục đích học tập, tham khảo, nghiên cứu và hỗ trợ kỹ thuật. Người dùng tự chịu trách nhiệm đối với việc tải xuống,
+              cài đặt, chỉnh sửa, triển khai hoặc sử dụng bất kỳ nội dung nào từ hệ thống của chúng tôi.
+            </p>
+            <div class="highlight">
+              Chúng tôi không chịu trách nhiệm đối với thiệt hại trực tiếp, gián tiếp, mất dữ liệu, lỗi hệ thống, gián đoạn dịch vụ,
+              tổn thất tài chính hoặc các hậu quả phát sinh từ việc người dùng sử dụng sai mục đích, lạm dụng hoặc tự ý chỉnh sửa nội dung.
+            </div>
+            <p style="margin-top:14px;">
+              Người dùng có trách nhiệm tự bảo đảm rằng việc sử dụng mã nguồn, công cụ hoặc dịch vụ là phù hợp với quy định pháp luật
+              tại nơi mình sinh sống hoặc hoạt động. Việc truy cập và tiếp tục sử dụng hệ thống đồng nghĩa với việc người dùng chấp nhận
+              tự chịu mọi rủi ro liên quan.
+            </p>
+          </div>
+
+          <div class="section" id="section8">
+            <h2><span class="number">8</span> Cập nhật chính sách</h2>
+            <p>
+              Chúng tôi có quyền chỉnh sửa, cập nhật hoặc thay đổi nội dung chính sách bảo mật này vào bất kỳ thời điểm nào mà không cần
+              thông báo trước. Phiên bản mới nhất sẽ luôn được đăng tải trên hệ thống để người dùng theo dõi và cập nhật.
+            </p>
+          </div>
+
+          <div class="section" id="section9">
+            <h2><span class="number">9</span> Liên hệ</h2>
+            <p>
+              Nếu có bất kỳ câu hỏi, góp ý hoặc yêu cầu liên quan đến chính sách bảo mật, người dùng có thể liên hệ trực tiếp với
+              đội ngũ quản trị của Hệ Sinh Thái DucYuz.Com thông qua các kênh hỗ trợ chính thức được công bố trên website.
+            </p>
+          </div>
+
+          <div class="warning">
+            <strong>Lưu ý quan trọng</strong>
+            Nội dung miễn trừ trách nhiệm trong trang này nhằm làm rõ phạm vi sử dụng dịch vụ và giới hạn trách nhiệm của hệ thống.
+            Nội dung này không mặc định loại bỏ toàn bộ trách nhiệm pháp lý trong mọi trường hợp nếu pháp luật hiện hành có quy định khác.
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 <span class="brand">Hệ Sinh Thái DucYuz.Com</span>. All rights reserved.
+    </div>
+  </footer>
+
+  <a href="#top" class="top-btn" title="Lên đầu trang">↑</a>
+</body>
+</html>
